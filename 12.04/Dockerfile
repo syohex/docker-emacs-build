@@ -1,7 +1,7 @@
 # How to fatpack with docker
 #
 # docker build -t `whoami`/emacs-build .
-# docker run -v `pwd`/..:/emacs-build `whoami`/emacs-build
+# docker run -v `pwd`/archives:/emacs-build `whoami`/emacs-build
 #
 
 FROM ubuntu:12.04
