@@ -17,6 +17,8 @@ RUN apt-get -y install \
     libgnutls-dev libxml2-dev curl \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /work-emacs
+
 RUN curl -L http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-24.3.tar.xz | tar Jxf - \
     && (cd emacs-24.3 && ./configure --without-x --prefix=/home/travis/.emacs.d/versions/emacs-24.3 && make && make install) \
     && (tar JcfP /emacs/emacs-24.3-travis.tar.xz /home/travis/.emacs.d/versions/emacs-24.3)
